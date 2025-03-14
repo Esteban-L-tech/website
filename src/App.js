@@ -6,6 +6,7 @@ import News from './pages/news';
 import Connexion from './pages/connexion'
 import News1 from './pages/news-pages/news-1'
 import Register from "./pages/register";
+import Verifmail from "./pages/verfiMail";
 
 
 
@@ -14,12 +15,12 @@ function App() {
     <>
       <Banner />
       <main className="container-fluid px-0">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Register />} />
-          <Route path="/Connexion" element={<Connexion />} />
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Verifmail />} />
+            <Route path="/Connexion" element={<Connexion />} />
+          </Routes>
+        </BrowserRouter>
 
       </main>
       <Footer />

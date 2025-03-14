@@ -1,13 +1,8 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
   z-index: -1;
   position: relative;
   background-image: linear-gradient(to top, #35aaf825, #00c3ff2a, #000000f5, #000000), url("./assets/images/binairies.png");
@@ -15,14 +10,11 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   min-height: 100vh;
-  margin: 0;
   padding: 0;
-
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 #root, main {
@@ -30,7 +22,6 @@ code {
   flex-direction: column;
   min-height: 100vh;
 }
-
 
 #banniere {
   background: linear-gradient(to bottom, #ffffff00, #000000f5, #000000), url(./assets/images/banniere.png);
@@ -40,7 +31,6 @@ code {
 
 #footer {
   background-color: #1D1B20;
-  background-size: cover;
   color: azure;
   position: relative;
   bottom: 0;
@@ -52,25 +42,17 @@ code {
 }
 
 #basic-nav-dropdown,
-#basic-nav-dropdown-item {
+#basic-nav-dropdown-item,
+.text-color,
+.text-color-2 {
   color: azure;
 }
 
 #basic-nav-dropdown:hover,
-#basic-nav-dropdown-item:hover {
+#basic-nav-dropdown-item:hover,
+.text-color:hover,
+.text-color-2:hover {
   color: #055d94;
-}
-
-.text-color {
-  color: azure !important;
-}
-
-.text-color:hover {
-  color: #055d94 !important;
-}
-
-.text-color-2 {
-  color: azure !important;
 }
 
 #basic-nav-dropdown-item:hover {
@@ -82,45 +64,24 @@ code {
 }
 
 .custom-dropdown-left {
-
   display: flex;
   justify-content: left;
 }
 
-.custom-dropdown .dropdown-menu {
-  background-color: #055d94;
-}
-
+.custom-dropdown .dropdown-menu,
+.custom-toggle,
 .custom-color {
-  background-color: #055d94 !important;
-  color: azure !important;
+  background-color: #055d94;
+  color: azure;
   padding: 10px 20px;
-  border: 1px solid azure !important;
+  border: 1px solid azure;
   border-radius: 5px;
 }
 
-.custom-color:hover {
-  background-color: #0d227096 !important;
-  color: azure !important;
-  padding: 10px 20px;
-  border: 1px solid azure !important;
-  border-radius: 5px;
-}
-
-.custom-toggle {
-  background-color: #055d94 !important;
-  color: azure !important;
-  padding: 10px 20px;
-  border: 1px solid azure !important;
-  border-radius: 5px;
-}
-
+.custom-color:hover,
 .custom-toggle:hover {
-  background-color: #0d227096 !important;
-  color: azure !important;
-  padding: 10px 20px;
-  border: 1px solid azure !important;
-  border-radius: 5px;
+  background-color: #0d227096;
+  color: azure;
 }
 
 .custom-toggle .navbar-toggler-icon {
@@ -152,20 +113,25 @@ code {
   background-color: #055d94 !important;
 }
 
-.text-align-center {
+.text-align-center,
+.text-align-left,
+.text-i,
+.text-d {
   text-align: center;
+}
+
+.text-align-center {
   font-size: 24px;
   font-weight: bold;
   margin: 10px 0;
 }
 
 .text-align-left {
-  text-align: left;
   margin-left: 25px;
 }
 
 .logo {
-  width: 150px !important;
+  width: 150px;
   height: auto;
   padding: 20px;
 }
@@ -175,110 +141,90 @@ code {
   font-weight: 600;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
   margin-right: 20px;
 }
 
 .carouselItem {
   width: 100%;
-  height: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 50px 0;
 }
 
-
-.inscrit {
+h1, h3, h4, h5, h6, .test, .test3 {
   color: white;
-}
-
-
-
-h1 {
-  color: white;
+  text-align: center;
 }
 
 h2 {
+  text-align: center;
   color: red;
   border-style: dashed none;
-  text-align: center;
 }
 
-h3{
-  text-align: center;
-}
-
-h4{
-  color: white;
-  text-align: center;
+h4 {
   font-size: 250%;
 }
 
-h5{
-  color: white;
+h5 {
   font-size: 150%;
 }
 
-h6{
-  color: white;
+h6 {
   letter-spacing: 2px;
   line-height: 25px;
 }
 
-
-
-.test{
-  text-align: center;
+.test {
   font-size: x-large;
-  color: white;
 }
 
-.test3{
-  text-align: center;
-  color: white;
+.test3 {
   line-height: 50px;
   letter-spacing: 2px;
-}
-
-
-.text-i {
-  font-size: x-large;
-}
-
-.form-text {
-  color: white;
 }
 
 .text-c {
   font-size: medium;
   background-color: #232323;
   background: linear-gradient(0deg, #000000, #2e2e2e);
+}
+
+.btn,
+.commitExemple,
+.register,
+.connexion {
   color: white;
 }
 
-.text-d {
-  text-align: center;
+.connexion{
+  background-color: #e64f4f;
 }
 
-
-
-.btn{
-  color: rgb(255, 255, 255);
-}
-
-.imgArticle{
-  max-width: 500px ;
-  max-height: auto ;
-  align-items: center;
-}
-
-.commitExemple{
+.verifmail{
   color: white;
+}
+
+.imgArticle {
+  max-width: 500px;
+  max-height: auto;
+}
+
+.inscrit {
+  color: white;
+  font-size:x-large;
+}
+
+.buttonC{
   background-color: #055d94;
+  border-color: white;
+  text-align: right;
+
 }
 
-.register{
-  color: white;
-  
+.textB{
+  width: 300px;
 }
 
-
+.buttonRow{
+  text-align: right;
+  background-color: #e64f4f;
+}

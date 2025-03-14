@@ -30,7 +30,6 @@ function News1() {
                         <div className="col-6">
                             <form>
                                 <div className="mb-3 commitExemple">
-                                <script src="MenuOuvrableFermable.js"/>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris bibendum orci quis diam malesuada, quis pharetra risus elementum. Ut mollis  posuere fermentum. Sed ut sem eu orci blandit rutrum nec vitae lectus.  Suspendisse suscipit et neque in porttitor</p>
                                 </div>
 
