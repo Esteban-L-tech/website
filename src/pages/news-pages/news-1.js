@@ -4,6 +4,7 @@ import { Container, Col } from "react-bootstrap";
 
 
 function News1() {
+
     return (
         <>
             <Container className="text-center">
@@ -21,44 +22,53 @@ function News1() {
                 </h6>
                 <h5>Liste récapitulative des éléments de section HTML5</h5>
                 <h6>Le tableau suivant récapitule les nouveaux éléments de section et leur usage le plus commun, tel que décrit par la spécification.</h6>
-
-                <Container className="test3">
-                <table border=" 0">
-                    <thead>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Détails</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>section</td>
-                            <td>Section générique regroupant un même sujet, une même fonctionnalité, de préférence avec un en-tête, ou bien section d'application web</td>
-                        </tr>
-                        <tr>
-                            <td>article</td>
-                            <td>Section de contenu indépendante, pouvant être extraite individuellement du document ou syndiquée (flux RSS ou équivalent), sans pénaliser sa compréhension</td>
-                        </tr>
-                        <tr>
-                            <td>nav</td>
-                            <td>Section possédant des liens de navigation principaux (au sein du document ou vers d'autres pages)</td>
-                        </tr>
-                        <tr>
-                            <td>aside</td>
-                            <td>Section dont le contenu est un complément par rapport à ce qui l'entoure, qui n'est pas forcément en lien direct avec le contenu mais qui peut apporter des informations supplémentaires.</td>
-                        </tr>
-                        <tr>
-                            <td>header</td>
-                            <td>Section d'introduction d'un article, d'une autre section ou du document entier (en-tête de page).</td>
-                        </tr>
-                        <tr>
-                            <td>footer</td>
-                            <td>	Section de conclusion d'une section ou d'un article, voire du document entier (pied de page).</td>
-                        </tr>
-                    </tbody>
-                </table>
-                </Container>
             </Container>
+
+            <div className="container">
+                <div className="connexion">
+                    <div className="row">
+                        <div className="col-6">
+                            <form>
+                                <div className="mb-3 commitExemple">
+                                <script src="MenuOuvrableFermable.js"/>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris bibendum orci quis diam malesuada, quis pharetra risus elementum. Ut mollis  posuere fermentum. Sed ut sem eu orci blandit rutrum nec vitae lectus.  Suspendisse suscipit et neque in porttitor</p>
+                                </div>
+
+                                <div className="mb-3 commitExemple">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris bibendum orci quis diam malesuada, quis pharetra risus elementum. Ut mollis  posuere fermentum. Sed ut sem eu orci blandit rutrum nec vitae lectus.  Suspendisse suscipit et neque in porttitor</p>
+                                </div>
+
+                                <div className="mb-3 commitExemple">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris bibendum orci quis diam malesuada, quis pharetra risus elementum. Ut mollis  posuere fermentum. Sed ut sem eu orci blandit rutrum nec vitae lectus.  Suspendisse suscipit et neque in porttitor</p>
+                                </div>
+
+                                <div className="mb-3 commitExemple">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris bibendum orci quis diam malesuada, quis pharetra risus elementum. Ut mollis  posuere fermentum. Sed ut sem eu orci blandit rutrum nec vitae lectus.  Suspendisse suscipit et neque in porttitor</p>
+                                </div>
+
+                                <div className="mb-3 form-check">
+                                    <input type="comentaire" className="form-control" id="exampleInputEmail1" aria-describedby="commentaireWhrite" />
+                                </div>
+                                <div className="mb-3">
+                                </div>
+                                <button type="submit" className="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+    Default dropdown
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Menu item</a></li>
+    <li><a class="dropdown-item" href="#">Menu item</a></li>
+    <li><a class="dropdown-item" href="#">Menu item</a></li>
+  </ul>
+</div>
+
         </>
     )
 }

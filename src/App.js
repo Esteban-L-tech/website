@@ -5,6 +5,7 @@ import Footer from './compos/myfooter';
 import News from './pages/news';
 import Connexion from './pages/connexion'
 import News1 from './pages/news-pages/news-1'
+import Register from "./pages/register";
 
 
 
@@ -15,10 +16,11 @@ function App() {
       <main className="container-fluid px-0">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<News1 />} />
+          <Route path="/" element={<Register />} />
           <Route path="/Connexion" element={<Connexion />} />
         </Routes>
       </BrowserRouter>
+
       </main>
       <Footer />
     </>
