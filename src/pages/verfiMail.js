@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -23,20 +23,21 @@ function Verifmail() {
 
       <Container>
         <Row>
-          <Col md={6}>
+          <Col md={6} style={{ margin: '3% auto' }}>
             <form onSubmit={handleSubmit}>
               <div className="mb-3 verifmail">
                 <label for="verificationCode" className="form-label">Vérifiez le code reçus par mail</label>
-                <input 
-                  type="text" 
-                  className="form-control textB" 
-                  id="verificationCode" 
-                  placeholder="Vérification code" 
+                <input
+                  type="text"
+                  className="form-control textBverif"
+                  id="verificationCode"
+                  placeholder="Entrez votre code"
                   value={verificationCode}
-                  onChange={(e) => setVerificationCode(e.target.value)} 
+                  style={{ margin: '0 auto' }}
+                  onChange={(e) => setVerificationCode(e.target.value)}
                 />
               </div>
-              <button type="submit" className="btn btn-primary buttonC"><Link to="/">Vérifier</Link></button>
+              <button type="submit" className="btn btn-primary buttonCverifmail" style={{ margin: '3% 25%' }}><Link to="/">Vérifier</Link></button>
             </form>
           </Col>
         </Row>

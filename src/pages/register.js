@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -26,69 +26,74 @@ function Register() {
 
       <Container>
         <Row>
-          <Col md={6}>
+          <Col md={6} style={{ margin: '3% auto' }}>
             <form onSubmit={handleSubmit}>
               <div className="mb-3 register">
                 <label For="firstName" className="form-label">Prénom</label>
-                <input 
-                  type="text" 
-                  className="form-control textB" 
-                  id="firstName" 
-                  placeholder="Prénom" 
+                <input
+                  type="text"
+                  className="form-control textBregister"
+                  id="firstName"
+                  placeholder="Prénom"
                   value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)} 
+                  style={{ margin: '0 auto' }}
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
               </div>
 
               <div className="mb-3 register">
                 <label for="lastName" className="form-label">Nom</label>
-                <input 
-                  type="text" 
-                  className="form-control textB" 
-                  id="lastName" 
-                  placeholder="Nom" 
+                <input
+                  type="text"
+                  className="form-control textBregister"
+                  id="lastName"
+                  placeholder="Nom"
                   value={lastName}
-                  onChange={(e) => setLastName(e.target.value)} 
+                  style={{ margin: '0 auto' }}
+                  onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
 
               <div className="mb-3 register">
                 <label for="email" className="form-label">Adresse mail</label>
-                <input 
-                  type="email" 
-                  className="form-control textB" 
-                  id="email" 
-                  placeholder="Adresse mail" 
+                <input
+                  type="email"
+                  className="form-control textBregister"
+                  id="email"
+                  placeholder="Adresse mail"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)} 
+                  style={{ margin: '0 auto' }}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
               <div className="mb-3 register">
                 <label for="password" className="form-label">Mot de passe</label>
-                <input 
-                  type="password" 
-                  className="form-control textB" 
-                  id="password" 
-                  placeholder="Mot de passe" 
+                <input
+                  type="password"
+                  className="form-control textBregister"
+                  id="password"
+                  placeholder="Mot de passe"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)} 
+                  style={{ margin: '0 auto' }}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
 
               <div className="mb-3 register">
                 <label for="confirmPassword" className="form-label">Confirmation mot de passe</label>
-                <input 
-                  type="password" 
-                  className="form-control textB" 
-                  id="confirmPassword" 
-                  placeholder="Confirmation mot de passe" 
+                <input
+                  type="password"
+                  className="form-control textBregister"
+                  id="confirmPassword"
+                  placeholder="Confirmation mot de passe"
                   value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)} 
+                  style={{ margin: '0 auto' }}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary buttonC"><Link to="/verifmail">Inscription</Link></button>
+              <button type="submit" className="btn btn-primary buttonC" style={{ margin: '2% 0%' }}><Link to="/verifmail">Inscription</Link></button>
             </form>
           </Col>
         </Row>

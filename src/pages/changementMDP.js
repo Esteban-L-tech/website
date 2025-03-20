@@ -22,33 +22,35 @@ function ChangementMDP() {
 
       <Container>
         <Row>
-          <Col md={6}>
+          <Col md={6} style={{ margin: '0 auto' }}>
             <form onSubmit={handleSubmit}>
               <div className="mb-3 verifmail">
-                <label for="verificationCode" className="form-label">Entrez le nouveau mot de passe</label>
+                <label for="verificationCode" className="form-label">Saisir votre nouveau mot de passe</label>
                 <input 
                   type="password" 
-                  className="form-control textB" 
+                  className="form-control textBchgmdp" 
                   id="verificationCode" 
-                  placeholder="Nouveau mot de passe" 
+                  placeholder="🔒︎ Nouveau mot de passe" 
                   value={verificationCode}
+                  style={{ margin: '0 auto' }}
                   onChange={(e) => setVerificationCode(e.target.value)} 
                 />
               </div>
             </form>
             <form onSubmit={handleSubmit}>
               <div className="mb-3 verifmail">
-                <label for="verificationCode" className="form-label">Entrez de nouveau le mot de passe</label>
+                <label for="verificationCode" className="form-label">Confirmez votre nouveau mot de passe</label>
                 <input 
                   type="password" 
-                  className="form-control textB" 
+                  className="form-control textBchgmdp" 
                   id="verificationCode" 
-                  placeholder="Nouveau mot de passe" 
+                  placeholder="🔒︎ Nouveau mot de passe" 
                   value={verificationCode}
+                  style={{ margin: '0 auto' }}
                   onChange={(e) => setVerificationCode(e.target.value)} 
                 />
               </div>
-              <button type="submit" className="btn btn-primary buttonC"><Link to="/">Mettre à jour</Link></button>
+              <button type="submit" className="btn btn-primary buttonCchgmdp" style={{ margin: '2% 25%' }}><Link to="/">Mettre à jour</Link></button>
             </form>
           </Col>
         </Row>

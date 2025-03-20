@@ -22,20 +22,21 @@ function RecupMDP() {
 
       <Container>
         <Row>
-          <Col md={6}>
+          <Col md={6} style={{ margin: '0 auto' }}>
             <form onSubmit={handleSubmit}>
               <div className="mb-3 verifmail">
                 <label for="verificationCode" className="form-label">Renseignez le mail utilisé lors de la création du compte</label>
                 <input 
                   type="text" 
-                  className="form-control textB" 
+                  className="form-control textBrecupmdp" 
                   id="verificationCode" 
                   placeholder="Adresse mail" 
                   value={verificationCode}
+                  style={{ margin: '0 auto' }}
                   onChange={(e) => setVerificationCode(e.target.value)} 
                 />
               </div>
-              <button type="submit" className="btn btn-primary buttonC"><Link to="/changementmdp">Vérifier</Link></button>
+              <button type="submit" className="btn btn-primary buttonCrecupmdp" style={{ margin: '2% 25%' }}><Link to="/changementmdp">Vérifier</Link></button>
             </form>
           </Col>
         </Row>

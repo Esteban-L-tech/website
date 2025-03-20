@@ -28,9 +28,9 @@ function App() {
             <Route path="/changementmdp" element={<ChangementMDP />} />
           </Routes>
         </BrowserRouter>
-
+        <Footer />
       </main>
-      <Footer />
+
     </>
   );
 }
