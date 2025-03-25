@@ -9,6 +9,7 @@ import Register from "./pages/register";
 import Verifmail from "./pages/verfiMail";
 import RecupMDP from "./pages/recupMDP";
 import ChangementMDP from "./pages/changementMDP";
+import Home from "./pages/home";
 
 
 
@@ -19,7 +20,8 @@ function App() {
       <main className="container-fluid px-0">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Connexion />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/connexion" element={<Connexion />} />
             <Route path="/news" element={<News />} />
             <Route path="/register" element={<Register />} />
             <Route path="/verifmail" element={<Verifmail />} />

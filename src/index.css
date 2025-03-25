@@ -202,6 +202,11 @@ h6 {
   color: white;
 }
 
+.forgotPassword{
+  background-color: #ffffff00;
+  border-color: #00000000;
+}
+
 .verifmail {
   color: white;
 }

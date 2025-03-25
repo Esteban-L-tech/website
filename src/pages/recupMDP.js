@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import { Button } from "react-bootstrap";
 
 function RecupMDP() {
   const [verificationCode, setVerificationCode] = useState('');
@@ -36,7 +37,7 @@ function RecupMDP() {
                   onChange={(e) => setVerificationCode(e.target.value)} 
                 />
               </div>
-              <button type="submit" className="btn btn-primary buttonCrecupmdp" style={{ margin: '2% 25%' }}><Link to="/changementmdp">Vérifier</Link></button>
+              <Button as={Link} to="/changementmdp" type="submit" className="btn btn-primary buttonCrecupmdp" style={{ margin: '2% 25%' }}>Vérifier</Button>
             </form>
           </Col>
         </Row>

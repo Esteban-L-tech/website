@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import InputGroup from 'react-bootstrap/InputGroup';
+import { Button } from "react-bootstrap";
+
 
 
 let VerticalBanner = './asset/image/bande_img.jpg';
@@ -56,7 +57,7 @@ function Connexion() {
                 />
               </div>
               <div className="mb-3 form-check" style={{ margin: '0% 32%' }}>
-                <button type="button" className="btn"><Link to="/recupmdp">Mot de passe oublié?</Link></button>
+                <Button as={Link} to="/recupmdp" type="button" className="forgotPassword">Mot de passe oublié?</Button>
               </div>
               <div className="buttonRow">
                 <Row>
@@ -69,7 +70,7 @@ function Connexion() {
           </Col>
           <Col md={6} className="text-i" style={{ margin: '3% auto' }}>
             <p className="inscrit">Si vous n'avez pas encore de compte, cliquez sur le bouton ci-dessous, c'est gratuit.</p>
-            <button type="button" className="btn btn-primary buttonC"><Link to="/register">Inscription</Link></button>
+            <Button as={Link} to="/register" type="button" className="btn btn-primary buttonC">Inscription</Button>
           </Col>
         </Row>
       </Container>

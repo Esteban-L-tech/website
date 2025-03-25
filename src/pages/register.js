@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import { Button } from "react-bootstrap";
 
 function Register() {
   const [firstName, setFirstName] = useState('');
@@ -93,7 +94,7 @@ function Register() {
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary buttonC" style={{ margin: '2% 0%' }}><Link to="/verifmail">Inscription</Link></button>
+              <Button as={Link} to="/verifmail" type="submit" className="btn btn-primary buttonC" style={{ margin: '2% 0%' }}>Inscription</Button>
             </form>
           </Col>
         </Row>

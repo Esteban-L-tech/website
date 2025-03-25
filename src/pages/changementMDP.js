@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import { Button } from "react-bootstrap";
 
 function ChangementMDP() {
   const [verificationCode, setVerificationCode] = useState('');
@@ -50,7 +51,7 @@ function ChangementMDP() {
                   onChange={(e) => setVerificationCode(e.target.value)} 
                 />
               </div>
-              <button type="submit" className="btn btn-primary buttonCchgmdp" style={{ margin: '2% 25%' }}><Link to="/">Mettre à jour</Link></button>
+              <Button as={Link} to="/connexion" type="submit" className="btn btn-primary buttonCchgmdp" style={{ margin: '2% 25%' }}>Mettre à jour</Button>
             </form>
           </Col>
         </Row>
