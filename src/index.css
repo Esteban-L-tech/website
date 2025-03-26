@@ -1,0 +1,254 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  z-index: -1;
+  position: relative;
+  background-image: linear-gradient(to top, #35aaf825, #00c3ff2a, #000000f5, #000000), url("./assets/images/binairies.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+#root,
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#banniere {
+  background: linear-gradient(to bottom, #ffffff00, #000000f5, #000000), url(./assets/images/banniere.png);
+  background-size: cover;
+  position: relative;
+}
+
+#footer {
+  background-color: #1D1B20;
+  color: azure;
+  position: relative;
+  bottom: 0;
+  border-top: 2px solid azure;
+  border-bottom: 2px solid azure;
+  padding: 10px;
+  margin: auto;
+  z-index: 10;
+}
+
+#basic-nav-dropdown,
+#basic-nav-dropdown-item,
+.text-color,
+.text-color-2 {
+  color: azure;
+}
+
+#basic-nav-dropdown:hover,
+#basic-nav-dropdown-item:hover,
+.text-color:hover,
+.text-color-2:hover {
+  color: #055d94;
+}
+
+#basic-nav-dropdown-item:hover {
+  background-color: azure;
+}
+
+#bg-body-tertiary {
+  background-color: #055d94;
+}
+
+.custom-dropdown-left {
+  display: flex;
+  justify-content: left;
+}
+
+.custom-dropdown .dropdown-menu,
+.custom-toggle,
+.custom-color {
+  background-color: #055d94;
+  color: azure;
+  padding: 10px 20px;
+  border: 1px solid azure;
+  border-radius: 5px;
+}
+
+.custom-color:hover,
+.custom-toggle:hover {
+  background-color: #0d227096;
+  color: azure;
+}
+
+.custom-toggle .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+#user-dropdown {
+  background-color: #055d94;
+  border: 1px solid azure;
+  padding: 5px;
+  margin: 10px;
+  max-height: 70px;
+  border-radius: 20px;
+}
+
+.userContainer {
+  display: flex;
+  align-items: center;
+}
+
+.userCard {
+  color: azure;
+  margin-left: auto;
+  font-weight: 600;
+  font-size: medium;
+}
+
+#user-dropdown .dropdown-menu {
+  background-color: #055d94 !important;
+}
+
+.text-align-center,
+.text-align-left,
+.text-i,
+.text-d {
+  text-align: center;
+}
+
+.text-align-center {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.text-align-left {
+  margin-left: 25px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  padding: 20px;
+}
+
+.copyright {
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.carouselItem {
+  width: 100%;
+  margin: 50px 0;
+}
+
+h1,
+h3,
+h4,
+h5,
+h6,
+.test,
+.test3 {
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  color: red;
+  border-style: dashed none;
+}
+
+h4 {
+  font-size: 250%;
+}
+
+h5 {
+  font-size: 150%;
+}
+
+h6 {
+  letter-spacing: 2px;
+  line-height: 25px;
+}
+
+.test {
+  font-size: x-large;
+}
+
+.test3 {
+  line-height: 50px;
+  letter-spacing: 2px;
+}
+
+.text-c {
+  font-size: medium;
+  background-color: #232323;
+  background: linear-gradient(0deg, #000000, #2e2e2e);
+}
+
+.btn,
+.commitExemple,
+.register,
+.connexion {
+  color: white;
+}
+
+.forgotPassword{
+  background-color: #ffffff00;
+  border-color: #00000000;
+}
+
+.verifmail {
+  color: white;
+}
+
+.imgArticle {
+  max-width: 500px;
+  max-height: auto;
+}
+
+.inscrit {
+  color: white;
+  font-size: x-large;
+}
+
+.buttonC {
+  background-color: #055d94;
+  border-color: white;
+}
+
+.buttonCrecupmdp {
+  background-color: #055d94;
+  border-color: white;
+  width: 300px;
+}
+
+.buttonCchgmdp {
+  background-color: #055d94;
+  border-color: white;
+  width: 300px;
+}
+.buttonCverifmail {
+  background-color: #055d94;
+  border-color: white;
+  width: 300px;
+}
+
+.buttonCconnexion {
+  background-color: #055d94;
+  border-color: white;
+  width: 200px;
+}
+
+.textB {
+  width: 400px;
+}
