@@ -46,7 +46,7 @@ function Register() {
                 <label for="lastName" className="form-label">Nom</label>
                 <input
                   type="text"
-                  className="form-control textBregister"
+                  className="form-control "
                   id="lastName"
                   placeholder="Nom"
                   value={lastName}

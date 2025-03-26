@@ -62,7 +62,7 @@ function Connexion() {
               <div className="buttonRow">
                 <Row>
                   <Col md={2}>
-                    <button type="submit" className="btn btn-primary buttonCconnexion" style={{ margin: '5% 250%' }}>Connexion</button>
+                    <Button as={Link} to="/" type="submit" className="btn btn-primary buttonCconnexion" style={{ margin: '5% 250%' }}>Connexion</Button>
                   </Col>
                 </Row>
               </div>
