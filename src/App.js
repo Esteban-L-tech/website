@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Banner from './compos/mynavbar';
 import Footer from './compos/myfooter';
+import ScrollToTopArrow from "./compos/scrolltotop";
 import News from './pages/news';
 import Connexion from './pages/connexion'
 import Register from "./pages/register";
@@ -11,7 +12,10 @@ import ChangementMDP from "./pages/changementMDP";
 import Home from "./pages/home";
 import Contact from "./pages/contactus";
 import Informations from "./pages/informations";
-import ScrollToTopArrow from "./compos/scrolltotop";
+import User from "./pages/user";
+import Modifuser from "./pages/modifuser";
+
+
 
 
 
@@ -34,6 +38,8 @@ function App() {
               <Route path="/changementmdp" element={<ChangementMDP />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/informations" element={<Informations />} />
+              <Route path="/user" element={<User />} />
+              <Route path="/modifuser" element={<Modifuser />} />
             </Routes>
             </main>
         <footer>

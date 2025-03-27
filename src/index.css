@@ -160,6 +160,13 @@ main {
   align-items: center;
 }
 
+.userprofil {
+  display: block;
+  margin: 0 auto;
+  max-width: 20%;
+  height: auto;
+}
+
 .userCard {
   color: azure;
   margin-left: auto;
@@ -222,6 +229,7 @@ h6,
   color: white;
   text-align: center;
 }
+
 
 h2 {
   text-align: center;

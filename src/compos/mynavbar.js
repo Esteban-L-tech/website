@@ -87,8 +87,8 @@ function Banner() {
             id='user-dropdown'
           >
             {/* Création du menu utilisateur et des liens*/}
-            <NavDropdown.Item as={Link} to='/profile' id="basic-nav-dropdown-item">Mon profil</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to='/logout' id="basic-nav-dropdown-item">Déconnexion</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to='/user' id="basic-nav-dropdown-item">Mon profil</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to='/' id="basic-nav-dropdown-item">Déconnexion</NavDropdown.Item>
           </NavDropdown>
         </Navbar.Collapse>
       </Container>

@@ -5,12 +5,13 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import { Button } from "react-bootstrap";
 
-function Register() {
+function Modifuser() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const Avatar = "/assets/images/bg.jpg";
 
   // Gestion de la soumission du formulaire
   const handleSubmit = (e) => {
@@ -21,40 +22,15 @@ function Register() {
     <>
       <Container>
         <Row>
-          <h1>Créer son compte</h1>
+          <h1>Modification information personnelles</h1>
         </Row>
       </Container>
 
       <Container>
-        <Row>
+        <Row style={{ margin: '10% auto' }}>
+        <img src={Avatar} alt='User' style={{ margin: '5% auto' }} className='rounded-circle item-center userprofil' />
           <Col md={6} style={{ margin: '3% auto' }}>
             <form onSubmit={handleSubmit}>
-              <div className="mb-3 register">
-                <label For="firstName" className="form-label">Prénom</label>
-                <input
-                  type="text"
-                  className="form-control textBregister"
-                  id="firstName"
-                  placeholder="Prénom"
-                  value={firstName}
-                  style={{ margin: '0 auto' }}
-                  onChange={(e) => setFirstName(e.target.value)}
-                />
-              </div>
-
-              <div className="mb-3 register">
-                <label for="lastName" className="form-label">Nom</label>
-                <input
-                  type="text"
-                  className="form-control "
-                  id="lastName"
-                  placeholder="Nom"
-                  value={lastName}
-                  style={{ margin: '0 auto' }}
-                  onChange={(e) => setLastName(e.target.value)}
-                />
-              </div>
-
               <div className="mb-3 register">
                 <label For="pseudo" className="form-label">Nouveau pseudo</label>
                 <input
@@ -69,20 +45,7 @@ function Register() {
               </div>
 
               <div className="mb-3 register">
-                <label for="email" className="form-label">Adresse mail</label>
-                <input
-                  type="email"
-                  className="form-control textBregister"
-                  id="email"
-                  placeholder="Adresse mail"
-                  value={email}
-                  style={{ margin: '0 auto' }}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-
-              <div className="mb-3 register">
-                <label for="password" className="form-label">Mot de passe</label>
+                <label for="password" className="form-label">Nouveau mot de passe</label>
                 <input
                   type="password"
                   className="form-control textBregister"
@@ -95,7 +58,7 @@ function Register() {
               </div>
 
               <div className="mb-3 register">
-                <label for="confirmPassword" className="form-label">Confirmation mot de passe</label>
+                <label for="confirmPassword" className="form-label">Confirmation nouveau mot de passe</label>
                 <input
                   type="password"
                   className="form-control textBregister"
@@ -107,7 +70,7 @@ function Register() {
                 />
               </div>
 
-              <Button as={Link} to="/verifmail" type="submit" className="btn btn-primary buttonC" style={{ margin: '2% 0%' }}>Inscription</Button>
+              <Button as={Link} to="/user" type="submit" className="btn btn-primary buttonC" style={{ margin: '2% 0%' }}>Enregistrement</Button>
             </form>
           </Col>
         </Row>
@@ -116,4 +79,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Modifuser;
