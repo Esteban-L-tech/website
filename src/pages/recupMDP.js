@@ -26,6 +26,7 @@ function RecupMDP() {
           <Col md={6} style={{ margin: '0 auto' }}>
             <form onSubmit={handleSubmit}>
               <div className="mb-3 verifmail">
+                  {/*paramètre pour l'input où sera entré l'email du compte avec un text a l'intérieur qui est "Adresse mail"*/}
                 <label for="verificationCode" className="form-label">Renseignez le mail utilisé lors de la création du compte</label>
                 <input 
                   type="text" 

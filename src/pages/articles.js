@@ -1,115 +1,101 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Image, Form, Button } from 'react-bootstrap';
-import CommentLikeButton from '../../compos/likebutton'; 
+import React, { useState } from 'react'; // Importation de React et du hook useState pour gérer les états locaux du composant.
+import { Container, Row, Col, Image, Form, Button } from 'react-bootstrap'; // Importation des composants de React-Bootstrap pour la mise en page et les éléments UI.
+import CommentLikeButton from '../../compos/likebutton'; // Importation du composant "CommentLikeButton" qui permet d'ajouter un like à un commentaire.
 
-//Non utilisé, reste ici pour l'historique
 function Article({ user }) {
-    // Default user information if no user is passed in
-    // Utilisateur par défaut si aucun utilisateur n'est passé
+    // Utilisateur par défaut si aucun utilisateur n'est passé en tant que prop
     const defaultUser = {
-        name: "Anonyme",
-        image: "/assets/images/avatar.svg",
-        status: "Connecté",
-        role: "Visiteur"
+        name: "Anonyme", // Nom par défaut
+        image: "/assets/images/avatar.svg", // Image par défaut de l'avatar
+        status: "Connecté", // Statut par défaut
+        role: "Visiteur" // Rôle par défaut
     };
 
-    // Current user either passed in as a prop or using default user
-    // Utilisateur actuel soit passé en tant que prop, soit utilisant l'utilisateur par défaut
+    // Utilisateur actuel, soit passé en prop, soit l'utilisateur par défaut
     const currentUser = user || defaultUser;
 
-    // State for storing the list of comments
     // État pour stocker la liste des commentaires
     const [comments, setComments] = useState([
         { id: 1, name: "Jean", image: "/assets/images/avatar.svg", text: "Ceci est un faux commentaire", date: "14/03/2025 13:37:34", likes: 0, likedByUser: false, editing: false },
         { id: 2, name: "Marie", image: "/assets/images/avatar.svg", text: "Et celui ci aussi est un faux commentaire", date: "14/03/2025 13:37:32", likes: 0, likedByUser: false, editing: false },
     ]);
 
-    // State for new comment text input
-    // État pour l'entrée de texte du nouveau commentaire
+    // État pour l'entrée du nouveau commentaire
     const [newComment, setNewComment] = useState("");
 
-    // State for controlling the number of visible comments
     // État pour contrôler le nombre de commentaires visibles
     const [visibleCount, setVisibleCount] = useState(5);
 
-    // Function to add a new comment
     // Fonction pour ajouter un nouveau commentaire
     const addComment = () => {
         if (newComment.trim() !== "") {
             const newEntry = {
-                id: Date.now(),
-                name: currentUser.name,
-                image: currentUser.image,
-                date: new Date().toLocaleString(),
-                text: newComment,
-                likes: 0,
-                likedByUser: false,
-                editing: false,
+                id: Date.now(), // Utilisation de la date actuelle pour générer un ID unique
+                name: currentUser.name, // Nom de l'utilisateur actuel
+                image: currentUser.image, // Image de l'utilisateur actuel
+                date: new Date().toLocaleString(), // Date de publication du commentaire
+                text: newComment, // Texte du commentaire
+                likes: 0, // Nombre de likes initial
+                likedByUser: false, // L'utilisateur n'a pas encore liké ce commentaire
+                editing: false, // Le commentaire n'est pas en mode édition
             };
-            setComments([newEntry, ...comments]);
-            setNewComment("");
+            setComments([newEntry, ...comments]); // Ajout du nouveau commentaire en début de liste
+            setNewComment(""); // Réinitialisation du champ de texte pour un nouveau commentaire
         }
     };
 
-    // Function to handle pressing Enter key for adding a comment
-    // Fonction pour gérer la pression de la touche "Entrée" pour ajouter un commentaire
+    // Fonction pour gérer la pression de la touche "Entrée" afin d'ajouter un commentaire
     const handleKeyPress = (e) => {
         if (e.key === "Enter") {
-            e.preventDefault();
-            addComment();
+            e.preventDefault(); // Empêche le rechargement de la page
+            addComment(); // Appel de la fonction pour ajouter un commentaire
         }
     };
 
-    // Function to show more comments
-    // Fonction pour afficher plus de commentaires
+    // Fonction pour afficher plus de commentaires (par défaut, 5 sont affichés)
     const showMoreComments = () => {
-        setVisibleCount(visibleCount + 5);
+        setVisibleCount(visibleCount + 5); // Augmente le nombre de commentaires visibles
     };
 
-    // Function to reduce the visible comments to the initial 5
-    // Fonction pour réduire les commentaires visibles à 5
+    // Fonction pour réduire le nombre de commentaires visibles à 5
     const reduceComments = () => {
-        setVisibleCount(5);
+        setVisibleCount(5); // Réduit le nombre de commentaires visibles à 5
     };
 
-    // Function to delete a comment
     // Fonction pour supprimer un commentaire
     const deleteComment = (id) => {
-        const filteredComments = comments.filter(comment => comment.id !== id);
-        setComments(filteredComments);
+        const filteredComments = comments.filter(comment => comment.id !== id); // Filtre les commentaires en supprimant celui dont l'ID correspond
+        setComments(filteredComments); // Mise à jour de l'état des commentaires après suppression
     };
 
-    // Function to handle liking/unliking a comment
-    // Fonction pour gérer l'ajout/retirement d'un "like" sur un commentaire
+    // Fonction pour gérer l'ajout/retrait d'un "like" sur un commentaire
     const likeComment = (id) => {
         const updatedComments = comments.map(comment =>
             comment.id === id
                 ? {
                     ...comment,
-                    likes: comment.likedByUser ? comment.likes - 1 : comment.likes + 1,
-                    likedByUser: !comment.likedByUser
+                    likes: comment.likedByUser ? comment.likes - 1 : comment.likes + 1, // Incrémente ou décrémente le nombre de likes
+                    likedByUser: !comment.likedByUser // Change l'état du like pour l'utilisateur
                 }
                 : comment
         );
-        setComments(updatedComments);
+        setComments(updatedComments); // Mise à jour de l'état des commentaires après modification
     };
 
-    // Function to toggle comment editing mode
-    // Fonction pour basculer en mode édition du commentaire
+    // Fonction pour basculer le mode édition d'un commentaire
     const editComment = (id) => {
         const updatedComments = comments.map(comment =>
-            comment.id === id ? { ...comment, editing: !comment.editing } : comment
+            comment.id === id ? { ...comment, editing: !comment.editing } : comment // Alterne entre édition et vue normale
         );
-        setComments(updatedComments);
+        setComments(updatedComments); // Mise à jour de l'état des commentaires après changement de mode d'édition
     };
 
-    // Function to update a comment's text after editing
-    // Fonction pour mettre à jour le texte d'un commentaire après modification
+    // Fonction pour mettre à jour un commentaire après modification
     const updateComment = (id, text) => {
         const updatedComments = comments.map(comment =>
-            comment.id === id ? { ...comment, text, editing: false } : comment
+            comment.id === id ? { ...comment, text, editing: false } : comment // Modifie le texte du commentaire et désactive le mode édition
         );
-        setComments(updatedComments);
+        setComments(updatedComments); // Mise à jour de l'état des commentaires après modification
     };
 
     return (
@@ -118,7 +104,7 @@ function Article({ user }) {
                 <Image
                     className="imageArticle my-4"
                     src="/assets/images/img1.jpg"
-                    alt="Image de l'article" // Image of the article
+                    alt="Image de l'article"
                     fluid
                     rounded
                 />
@@ -128,14 +114,7 @@ function Article({ user }) {
             <section className="content mb-4">
                 <Row>
                     <Col>
-                        <article>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est rem impedit
-                            temporibus corrupti facere nostrum culpa officia libero, animi, nobis accusamus ullam pariatur
-                            inventore minima quod ratione nihil officiis aut.
-                            Aliquam officia delectus deleniti accusamus reprehenderit eum ullam, necessitatibus saepe voluptas
-                            inventore minima similique hic esse at maxime soluta corporis, qui sit! Ad nihil eius exercitationem
-                            corporis ab eligendi blanditiis.
-                            Cum a, esse animi harum deserunt ullam laborum quaerat reiciendis odio ratione sed. Ipsam quia in,
-                            quam quis, id illum eaque sint numquam itaque, atque voluptatem eos cupiditate autem soluta?</article>
+                        <article>Lorem ipsum dolor, sit amet consectetur adipisicing elit...</article>
                         <p><strong>Publié le 14/03/2025 par Roberto Delavega</strong></p>
                     </Col>
                 </Row>
@@ -143,13 +122,13 @@ function Article({ user }) {
 
             <Container className="comments mb-5">
                 <h3>Espace Utilisateur</h3>
-
+                {/* Affichage des informations de l'utilisateur actuel */}
                 <Row className="align-items-center d-flex userImageCol mb-3 mx-5">
                     <Col xs={12} md={3} className="text-center mb-2 mb-md-0">
                         <Image
                             className="userImageComment"
                             src={currentUser.image}
-                            alt="Image de l'utilisateur" // User's image
+                            alt="Image de l'utilisateur"
                             roundedCircle
                             fluid
                         />
@@ -161,16 +140,17 @@ function Article({ user }) {
                     </Col>
                 </Row>
 
+                {/* Formulaire pour ajouter un commentaire */}
                 <Container>
                     <Form className="mb-3">
                         <Form.Group controlId="newComment">
                             <Form.Control
                                 className="commentInput mb-3"
                                 type="text"
-                                placeholder="Ajoutez votre commentaire..." // Placeholder text
+                                placeholder="Ajoutez votre commentaire..."
                                 value={newComment}
                                 onChange={(e) => setNewComment(e.target.value)}
-                                onKeyPress={handleKeyPress}
+                                onKeyPress={handleKeyPress} // Gestion de la touche "Entrée"
                             />
                         </Form.Group>
                         <Button className="custom-button-2" onClick={addComment}>
@@ -180,25 +160,28 @@ function Article({ user }) {
                 </Container>
                 <h3 className="mb-3">Commentaires</h3>
 
+                {/* Affichage des commentaires */}
                 <ul className="list-unstyled">
                     {comments.slice(0, visibleCount).map((comment) => (
                         <li key={comment.id} className="mb-3">
                             <Row className="align-items-center comms">
+                                {/* Avatar de l'utilisateur qui a posté le commentaire */}
                                 <Col className="userImageCommentCol" xs={3}>
                                     <Image
                                         className="userImageComment"
                                         src={comment.image}
-                                        alt={`Avatar de ${comment.name}`} // Avatar of the commenter
+                                        alt={`Avatar de ${comment.name}`}
                                         roundedCircle
                                         fluid
                                     />
                                 </Col>
                                 <Col>
+                                    {/* Affichage du commentaire avec option d'édition */}
                                     {comment.editing ? (
                                         <Form.Control
                                             type="text"
                                             defaultValue={comment.text}
-                                            onBlur={(e) => updateComment(comment.id, e.target.value)}
+                                            onBlur={(e) => updateComment(comment.id, e.target.value)} // Sauvegarde après modification
                                         />
                                     ) : (
                                         <>
@@ -209,22 +192,24 @@ function Article({ user }) {
                                     )}
                                 </Col>
                                 <Col className="buttonInteraction" xs={12} md={4}>
+                                    {/* Bouton pour liker le commentaire */}
                                     <CommentLikeButton comment={comment} likeComment={likeComment} />
                                     {comment.name === currentUser.name && (
                                         <>
+                                            {/* Boutons pour modifier ou supprimer le commentaire */}
                                             <Button
                                                 className='editButton'
                                                 size="sm"
                                                 onClick={() => editComment(comment.id)}
                                             >
-                                                {comment.editing ? 'Enregistrer' : 'Modifier'} {/* Save or Edit */}
+                                                {comment.editing ? 'Enregistrer' : 'Modifier'}
                                             </Button>
                                             <Button
                                                 className='deleteButton'
                                                 size="sm"
                                                 onClick={() => deleteComment(comment.id)}
                                             >
-                                                X {/* Delete button */}
+                                                X
                                             </Button>
                                         </>
                                     )}
@@ -234,15 +219,16 @@ function Article({ user }) {
                     ))}
                 </ul>
 
+                {/* Affichage des boutons pour afficher plus ou réduire les commentaires */}
                 <Container className="d-flex justify-content-between">
                     {visibleCount < comments.length && (
                         <Button className="custom-button-2" onClick={showMoreComments}>
-                            Afficher plus {/* Show more */}
+                            Afficher plus
                         </Button>
                     )}
                     {visibleCount > 5 && (
                         <Button variant="secondary" onClick={reduceComments}>
-                            Réduire {/* Reduce */}
+                            Réduire
                         </Button>
                     )}
                 </Container>
